@@ -1,0 +1,6 @@
+*.log
+npm-debug.log*
+lib-cov
+coverage
+node_modules
+docs

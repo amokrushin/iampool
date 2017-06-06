@@ -1,0 +1,51 @@
+{
+  "name": "iampool",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Anton Mokrushin <anton@mokr.org>",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/Pool.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "docs-build": "rm ./docs -rf && documentation build lib/** -f html -g -o docs",
+    "docs-publish": "npm run docs-build && gh-pages -d docs && rm ./docs -rf",
+    "docs-serve": "documentation serve lib/** -f html -g -o docs --port 8080 --watch",
+    "git-reset": "git reset --hard HEAD && git clean -df && git pull",
+    "lint": "eslint index.js lib/**/*.js",
+    "test": "iamtest -r spec",
+    "preversion": "run-s test lint docs-publish"
+  },
+  "dependencies": {
+    "async": "^2.4.1"
+  },
+  "devDependencies": {
+    "documentation": "^4.0.0-rc.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1",
+    "gh-pages": "^1.0.0",
+    "iamtest": "^1.5.3",
+    "lodash.pick": "^4.4.0",
+    "npm-run-all": "^4.0.2",
+    "pre-commit": "^1.2.2",
+    "sinon": "^2.3.2",
+    "tape": "^4.6.3",
+    "tape-async": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
+}
