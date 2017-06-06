@@ -6,3 +6,11 @@ node_js:
 after_success:
   - yarn add codecov
   - "./node_modules/.bin/iamtest -c lcovonly && ./node_modules/.bin/codecov"
+deploy:
+  provider: npm
+  email: anton@mokr.org
+  api_key:
+    secure: ZEz4jEvfOwVCB7A7hoOASRtSHiozOjUPfCYq0/SMQVfUoTUInZZQNrw0qb4wpnJdZ0UHG4o6tFtEkMHZfcCa7rYLl74FsfCuI4OF9QbuMUGW9jdYsMPE36GUd2h4eMKG+xMNN0HHwEUGiy3MP4xeFNkORj+J5B6aeMtSvkAdQT0sSBJPwp3MaCi+njp1WG/D5IOBgLvzhWAz4DyM4HIoh+H8GVjkh2DK7Tki1ZMeDuJBfhD3fmaeXYS2GF4h8sZswOKMVsYFv4F/a6UPj8R2YpcV77LqTX5PujNgWKGwaxmFyDHp+FlziBEsUWwOGx4NSe1NMq7jI2+S+U2gB0I31Vhq1NlXpgC9z2xv8odcEUdjR3k9eSqvCgX+NGY7JXOOZvHo9NVNzUqJAFCmRUs3UgFY1vwFQ/tieQ1PpN8UOLULjhbhCksIRDoz0R1xjHEVwCgo9QT0Vdv4mv8tKrjJ5GXah5YqwnTr868waytdADQZ1swC3M2b01HCVFRUtoFSOASVmr2dd/c+Buo2wTT0ns8VkjY2UfE4sBIZ6T+XJegThr00YNnTerbLMaw1OyvxUTDLY+tLBr+CqJDIaNiMU6rKSAM+tWswta/fH/h5swy6TDdRcsAfsca4FAjkiE/98dLZPic6FlFGCp/8QGCOaSlUrBzHDVXVQjZbZe9ccKA=
+  on:
+    tags: true
+    repo: amokrushin/iampool
