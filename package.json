@@ -15,7 +15,7 @@
   },
   "scripts": {
     "docs-build": "rm ./docs -rf && documentation build lib/** -f html -g -o docs",
-    "docs-publish": "npm run docs-build && gh-pages -d docs && rm ./docs -rf",
+    "docs-publish": "npm run docs-build && rm -rf node_modules/gh-pages/.cache && gh-pages -d docs && rm ./docs -rf",
     "docs-serve": "documentation serve lib/** -f html -g -o docs --port 8080 --watch",
     "git-reset": "git reset --hard HEAD && git clean -df && git pull",
     "lint": "eslint index.js lib/**/*.js",
