@@ -1,6 +1,6 @@
 {
   "name": "iampool",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "description": "",
   "keywords": [],
   "license": "MIT",
@@ -20,7 +20,8 @@
     "git-reset": "git reset --hard HEAD && git clean -df && git pull",
     "lint": "eslint index.js lib/**/*.js",
     "test": "iamtest -r spec",
-    "preversion": "run-s test lint docs-publish"
+    "preversion": "run-s test lint",
+    "postversion": "npm run docs-publish"
   },
   "dependencies": {
     "async": "^2.4.1"
