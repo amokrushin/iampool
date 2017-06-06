@@ -6,6 +6,7 @@ node_js:
 after_success:
   - yarn add codecov
   - "./node_modules/.bin/iamtest -c lcovonly && ./node_modules/.bin/codecov"
+  - yarn remove codecov
 deploy:
   provider: npm
   email: anton@mokr.org
